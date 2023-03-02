@@ -1,0 +1,300 @@
+body{
+	margin: 0px;
+	height: 100vh;
+
+
+	display: flex;
+	justify-content: space-between;
+}
+
+form{
+	width: 100%;
+	transition: width, 1s;
+}
+
+header{
+	height: 10%;
+	box-shadow:  0px 1px 8px rgb(107,107,107);
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+header a{
+	height: 80%;
+	display: flex;
+	align-items: center;
+}
+
+header a img{
+	height: 90%;
+}
+
+#choixTD{
+	width: 60%;
+	height: 100%;
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	font-family: arial;
+	color: #777;
+	font-size: 15px;
+}
+
+nav{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	margin-left: 5%;
+	height: 100%;
+}
+
+.titreF{
+	transition: color 0.3s;
+	cursor: pointer;
+}
+
+nav:hover .titreF {
+	color: #57CCEF;
+}
+
+fieldset{
+	background: white;
+	border-radius: 5px;
+	border: none;
+	box-shadow: 1px 1px 15px rgb(177,177,177);
+
+	position: absolute;
+	z-index: 3;
+	top: 9%;
+
+	opacity: 0;
+	transition: opacity 2s ease-in-out;
+
+	display: none;
+	flex-direction: column;
+	justify-content: flex-start;
+}
+
+fieldset:hover, nav:hover fieldset {
+	display: flex;
+	opacity: 1;
+	transition: opacity 2s ease-in-out;
+}
+
+fieldset input{
+	height: 25px;
+}
+
+fieldset p {
+	display: flex;
+	max-height: 30px;
+	justify-content: flex-start;
+	align-items: center;
+	margin-top: 2px;
+	margin-bottom: 2px;
+}
+
+label {
+	display: flex;
+	align-items: center;
+}
+
+fieldset img {
+	height: 25px;
+	margin-left: 5%;
+}
+
+#choixEcoles{
+	margin-top: 9px;
+
+	height: 88%;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+#choixEcoles a{
+  	display: none;
+  	color: #777;
+  	text-decoration: none;
+  }
+
+#zone{
+	height: 90%;
+	position: relative;
+}
+
+#zone input{
+	display: none;
+}
+
+input:checked + .positionVille{
+	opacity: 100%;
+}
+
+.positionVille {
+	position: absolute;
+	opacity: 20%;
+	cursor: pointer;
+	height: 6%;
+	width: 6%;
+}
+
+.positionVille, .positionVille label{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	z-index: 2;
+}
+
+input:checked{
+	display: inline;
+}
+
+.positionVille img{
+	width: 100%;
+	transition: width 0.2s;
+}
+
+.positionVille img:hover{
+	width: 130%;
+}
+
+.nomVille{
+	position: absolute;
+	margin-top: 50px;
+	margin-left: 10px;
+	font-family: Roboto,Helvetica,Arial,sans-serif;
+	font-size: 0.9em;
+	color: #004875;
+}
+
+#carte {
+	height: 100%;
+	width: 100%;
+}
+
+#resultats {
+	height: 100%;
+	width: 0%;
+	background: #F3F4FA;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+	overflow: auto;
+
+	transition: width, 1s;
+
+	border-left: lightgray 2px solid;
+}
+
+h1 a {
+	text-decoration: none;
+	font-family: Roboto,Helvetica,Arial,sans-serif;
+	color: #424646;
+}
+
+table{
+	width: 95%;
+	border-collapse: collapse;
+	margin-bottom: 3%;
+}
+
+thead{
+	background-color: #D4EFF4;
+	height: 30px;
+}
+
+.resultat{
+	background: #F9F9F9;
+	transition: background 0.5s;
+}
+
+.resultat:hover{
+	background: #EEEEEE;
+}
+
+.resultat:nth-of-type(2n) {
+	background: #ececec;
+}
+
+.infoC {
+	color: #424646;
+	font-size: 0.7em;
+}
+
+table img{
+	height: 40px; 
+}
+
+td{
+	text-align: center;
+	border-top: 1px solid #ddd;
+	padding: 1%;
+	width: 33%;
+	word-break: keep-all;
+}
+
+td img {
+	margin-left: 5px;
+}
+
+td a {
+	text-decoration: none;
+	color: #00ADEF;
+}
+
+@media screen and (max-width: 900px){
+  body {
+  	display: inline;
+  }
+
+  form{
+  	min-width: 100%;
+  	height: 100vh;
+  }
+
+  nav{
+  	font-size: 13px;
+  }
+
+  header a img{
+  	height: 80%;
+  	margin-top: 4%;
+  }
+
+  #choixEcoles div{
+  	width: 95vw;
+  	height: 95vw;
+  	max-height: 85vh;
+  	max-width: 85vh;
+  }
+
+  #choixEcoles a{
+  	display: inline;
+  	position: absolute;
+  	top: 92%;
+  }
+
+  .positionVille img:hover{
+	height: 100%;
+	width: 100%;
+}
+
+.nomVille{
+	font-size: 0.7em;
+	margin-top: 40px;
+}
+
+  #resultats{
+  	min-width: 100%;
+  	min-height: 30vh;
+  	border: none;
+  }
+}
